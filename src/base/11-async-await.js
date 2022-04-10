@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 
 // const getImagenPromesa = () => new Promise( resolve => resolve('https://ajskdhaskjdhajs.com') )
 // getImagenPromesa().then( console.log );
@@ -7,7 +7,7 @@ export const getImagen = async() => {
 
     try {
 
-        const apiKey = 'l4n7eAhGRXGTbvFk0lT5MzisI70lYr7n';
+        const apiKey = process.env.API_KEY_GIPHY
         const resp   = await fetch(`http://api.giphy.com/v1/gifs/random?api_key=${ apiKey }`);
         const { data } = await resp.json(); 
 
